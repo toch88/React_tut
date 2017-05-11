@@ -1,0 +1,7 @@
+<script src="./vendor/jquery-1.10.2.min.js"></script>
+  <script src="./vendor/bootstrap.min.js"></script>
+  <script src="./vendor/custom.js"></script>
+
+    <script type="text/javascript" async="" src="./vendor/ga.js"></script>
+
+    <script src="app.min.js"></script>
