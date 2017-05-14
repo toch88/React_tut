@@ -11,11 +11,11 @@ import queryString from 'query-string';
 
 
 import Layout from "./components/Layout";
-import Todos from "./components/Pages/Todos";
-import Home from "./components/Pages/Home";
-import Articles from "./components/Pages/Articles"
-import Plot from "./components/Pages/Plot"
-import Contacts from "./components/Pages/Contacts"
+import Todos from "./Pages/Todos";
+import Home from "./Pages/Home";
+import Articles from "./Pages/Articles"
+import Plot from "./Pages/Plot"
+import Contacts from "./Pages/Contacts"
 
 const app = document.getElementById('app');
 const customHistory = createBrowserHistory();
