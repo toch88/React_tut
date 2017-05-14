@@ -49,7 +49,8 @@ export default class Todos extends React.Component{
       return (
         <div>
           <h1>Todos</h1>
-          <button class="btn btn-success" onClick={this.createTodo.bind(this)}>Add</button>            
+          <button class="btn btn-success" onClick={this.createTodo.bind(this)}>Add</button>  
+          <br/>                    
           <ul>{TodoComponents}</ul>
 
         </div>       
