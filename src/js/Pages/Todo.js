@@ -1,8 +1,7 @@
 import React from 'react';
 
 export default class Todo extends React.Component{
-    render(){
-    console.log(this.props);
+    render(){   
     const complete=this.props.complete? "label label-success" : "label label-danger";
     const completeText=this.props.complete? "success" : "danger";
 
