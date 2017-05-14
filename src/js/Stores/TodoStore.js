@@ -30,14 +30,43 @@ class TodoStore extends EventEmitter{
         this.emit("change");
     }
 
+    deleteTodo(idToDel){
+        
+        for(let i=0; i<this.todos.length; i++){
+            let {id} = this.todos[i]
+            if(id == idToDel){
+                this.todos.splice(i,1);
+            }
+        }
+
+        this.emit("change");
+    }
+
+    changeTodo(idToChng){
+          for(let i=0; i<this.todos.length; i++){
+            let {id} = this.todos[i]
+            if(id == idToChng){
+                this.todos[i].complete=true;
+            }
+        }    
+
+        this.emit("change");    
+    }
+
     getAll(){
         return this.todos;
-    }
+    } 
 
     handleActions(action){
       switch(action.type){
         case "CREATE_TODO": {
-            this.createTodo(action.text);
+            this.createTodo(action.text); break;
+        }
+        case "DELETE_TODO": {
+            this.deleteTodo(action.id); break;
+        }
+         case "CHANGE_TODO": {
+            this.changeTodo(action.id); break;
         }
       }
     }
@@ -45,6 +74,7 @@ class TodoStore extends EventEmitter{
 
 const todoStore = new TodoStore();
 dispatcher.register(todoStore.handleActions.bind(todoStore));
+//dispatcher.register(todoStore.anotherAction.bind(todoStore));
 window.todoStore=todoStore;
 window.dispatcher=dispatcher;
 
