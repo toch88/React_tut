@@ -12,6 +12,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Layout from "./components/Layout";
 import Todos from "./components/Pages/Todos";
 import Home from "./components/Pages/Home";
+import Plot from "./components/Pages/Plot"
 import Contacts from "./components/Pages/Contacts"
 
 const app = document.getElementById('app');
@@ -19,14 +20,15 @@ const customHistory = createBrowserHistory()
 
 ReactDOM.render( 
     <Router>         
-        <Layout>
+        <Layout>            
             <Switch>
-            <Route path="/home" component={Home}/>
-            <Route path="/todos" component = {Todos}/>  
-            <Route path="/contacts" component = {Contacts}/>    
-            </Switch>   
+               
+                <Route path="/home/:news" component={Home} />
+                <Route path="/todos" component = {Todos}/>  
+                <Route path="/plot" component = {Plot}/>  
+                <Route path="/contacts" component = {Contacts}/>    
+            </Switch>            
         </Layout>        
     </Router>,
  app);
 
- console.log(customHistory);
